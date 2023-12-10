@@ -8,7 +8,7 @@ to your native language. The latter is about asking you to
 an image, video, or a vague description).
 
 As I was having a hard time finding Anki decks in recalling mode,
-this projects aims to generate Anki cards automatically for the
+this project aims to generate Anki cards automatically for the
 most common words and expressions used in English using Dall-e and GPT-4,
 provided by OpenAPI.
 
