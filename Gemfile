@@ -6,4 +6,6 @@ gem "ruby-openai"
 
 group :development do
   gem "dotenv"
+
+  gem "standardrb"
 end

@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "shopify.ruby-lsp"
+    "shopify.ruby-lsp",
+    "esbenp.prettier-vscode",
+		"testdouble.vscode-standard-ruby"
   ]
 }
