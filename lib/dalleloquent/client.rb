@@ -31,14 +31,27 @@ module Dalleloquent
       response.dig("data", 0, "url")
     end
 
-    def generate_response(prompt:, model: "gpt-4-1106-preview")
+    # https://platform.openai.com/docs/api-reference/chat/create
+    def generate_response(prompt:, model: "gpt-4-1106-preview", format: :plain)
+      if prompt.nil? || prompt.to_s.length < 10
+        raise "Prompt should be at least 10 characters long"
+      end
+
+      if format == :json && !%w[gpt-4-1106-preview gpt-3.5-turbo-1106].include?(model)
+        raise "#{model} is not compatible with json mode"
+      end
+
+      if format == :json && !prompt.match(/json/i)
+        raise "Prompt should contain the word `json` in some form in json mode"
+      end
+
       response = @ai.chat(
         parameters: {
           model: model,
           messages: [{
             role: "user", content: prompt
           }]
-        }
+        }.merge((format == :json) ? {response_format: {type: "json_object"}} : {})
       )
 
       response.dig("choices", 0, "message", "content")

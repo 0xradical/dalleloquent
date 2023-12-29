@@ -21,8 +21,9 @@ module Dalleloquent
     # )
 
     client.generate_response(prompt: %(
-      Give me the 100 most common idioms in English that can be used in
-      a professional setting
-    ))
+      Give me the 100 most common idioms, expressions or phrases in English that are useful and are
+      constantly used professional settings, in json format. Return the expression and also the explanation
+      for this expression
+    ), model: "gpt-3.5-turbo-1106", format: :json)
   end
 end

@@ -3,7 +3,6 @@
     "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
   },
   "rubyLsp.enabledFeatures": {
-
     "codeActions": true,
     "diagnostics": false,
     "documentHighlights": true,
