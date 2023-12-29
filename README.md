@@ -15,3 +15,19 @@ provided by OpenAPI.
 ## Setup 
 
 1) Create a .env (use .env.example as a template)
+
+## Specifications
+
+There's a database of common phrases, idioms, expressions, verbs that
+someone wants to remember periodically. This database can be created
+using OpenAI as well. For example, you can ask GPT-4 for the following: 
+
+```
+Give me the 100 most common idioms in English that can be used in 
+a professional setting
+```
+
+
+## License
+
+[MIT](./LICENSE)

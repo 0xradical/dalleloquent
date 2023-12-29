@@ -15,7 +15,7 @@ module Dalleloquent
     end
 
     def available_models
-      @ai.models.list["data"].sort_by{|a| -a["created"]}
+      @ai.models.list["data"].sort_by { |a| -a["created"] }
     end
 
     def generate_image(prompt:, size: 1024, style: "natural")
@@ -29,6 +29,19 @@ module Dalleloquent
         }
       )
       response.dig("data", 0, "url")
+    end
+
+    def generate_response(prompt:, model: "gpt-4-1106-preview")
+      response = @ai.chat(
+        parameters: {
+          model: model,
+          messages: [{
+            role: "user", content: prompt
+          }]
+        }
+      )
+
+      response.dig("choices", 0, "message", "content")
     end
   end
 end

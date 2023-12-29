@@ -1,9 +1,9 @@
-require 'dotenv'
+require "dotenv"
 Dotenv.load
 
 module Dalleloquent; end
 
-require_relative "./dalleloquent/client"
+require_relative "dalleloquent/client"
 
 module Dalleloquent
   def self.run
@@ -16,8 +16,13 @@ module Dalleloquent
 
     client = Dalleloquent::Client.new
 
-    puts client.generate_image(
-      prompt: "An image of someone falling off a stool"
-    )
+    # puts client.generate_image(
+    #   prompt: "An image of someone falling off a stool"
+    # )
+
+    client.generate_response(prompt: %(
+      Give me the 100 most common idioms in English that can be used in
+      a professional setting
+    ))
   end
 end
