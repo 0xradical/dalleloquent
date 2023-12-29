@@ -20,10 +20,16 @@ module Dalleloquent
     #   prompt: "An image of someone falling off a stool"
     # )
 
+    # client.generate_response(prompt: %(
+    #   Give me the 100 most common idioms, expressions or phrases in English that are useful and are
+    #   constantly used professional settings, especially in the tech industry, in json format. Return the
+    #   expression and also the explanation for this expression
+    # ), model: "gpt-3.5-turbo-1106", format: :json)
+
     client.generate_response(prompt: %(
       Give me the 100 most common idioms, expressions or phrases in English that are useful and are
-      constantly used professional settings, in json format. Return the expression and also the explanation
-      for this expression
-    ), model: "gpt-3.5-turbo-1106", format: :json)
+      constantly used professional settings, especially in the tech industry, in json format. Return the
+      expression and also the explanation for this expression
+    ), model: "gpt-4-1106-preview", format: :json)
   end
 end

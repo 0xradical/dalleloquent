@@ -3,7 +3,7 @@ require "openai"
 module Dalleloquent
   class Client
     def initialize
-      @ai = OpenAI::Client.new(access_token: ENV["OPENAPI_KEY"]) do |f|
+      @ai = OpenAI::Client.new(access_token: ENV["OPENAPI_KEY"], request_timeout: 240) do |f|
         f.response :logger, Logger.new($stdout), bodies: true
       end
 
